@@ -1,0 +1,2 @@
+token = ''
+confirmation_token = ''
