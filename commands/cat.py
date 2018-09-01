@@ -1,10 +1,10 @@
 import command_system
 import vkapi
-
+import settings
 
 def cat():
-   # Получаем случайную картинку из пабли
-   attachment = vkapi.get_random_wall_picture(-32015300)
+   # Получаем случайную картинку из паблика
+   attachment = vkapi.get_random_wall_picture(-32015300, settings.access_token)
    message = 'Вот тебе котик :)\nВ следующий раз я пришлю другого котика.'
    return message, attachment
 
