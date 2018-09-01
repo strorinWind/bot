@@ -5,10 +5,10 @@ session = vk.Session()
 api = vk.API(session, v=5.0)
 
 
-def get_random_wall_picture(group_id):
-    max_num = api.photos.get(owner_id=group_id, album_id='wall', count=0)['count']
+def get_random_wall_picture(group_id, token):
+    max_num = api.photos.get(owner_id=group_id, album_id='wall', count=0, access_token=token)['count']
     num = random.randint(1, max_num)
-    photo = api.photos.get(owner_id=str(group_id), album_id='wall', count=1, offset=num)['items'][0]['id']
+    photo = api.photos.get(owner_id=str(group_id), album_id='wall', count=1, offset=num, access_token=token)['items'][0]['id']
     attachment = 'photo' + str(group_id) + '_' + str(photo)
     return attachment
 
